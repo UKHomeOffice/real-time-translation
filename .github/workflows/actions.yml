@@ -29,3 +29,10 @@ jobs:
         with:
           scan-type: 'config'
           exit-code: '1'
+
+      - name: run kics Scan
+        uses: checkmarx/kics-github-action@v2.1.15
+        with:
+          path: '.'
+          fail_on: high,medium
+          output_path: myResults/
