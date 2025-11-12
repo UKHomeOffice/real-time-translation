@@ -10,7 +10,7 @@ Real-Time Translation leverages Transcription Translation AI models to transcrib
 * AWS DynamoDB, S3 for storage
 * AWS Step Functions, AWS Lambda for Orchestration
 * Amazon Cognito for authentication
-* Nunjuck, Javascript and the [https://frontend.design-system.service.gov.uk/UK Gov FrontEnd framework] for FrontEnd
+* Nunjuck, Javascript and the [UK Gov FrontEnd framework](https://frontend.design-system.service.gov.uk/)for FrontEnd
 
 # Language Support
 
@@ -25,7 +25,7 @@ Afrikaans, Arabic, Armenian, Azerbaijani, Belarusian, Bosnian, Bulgarian, Catala
 
 # Developing the Real-Time Translation API
 
-To work on developing the core Real-Time Translation API, run the below command which will deploy the service to an isolated Terraform Workspace:
+To work on developing the core Real-Time Translation API, run the below command which will deploy the service as an isolated Terraform Workspace:
 ```bash
 $ make WHISPER_ENDPOINT_NAME=<endpoint_name> WORKSPACE_NAME=<tf_workspace_name>
 ```
