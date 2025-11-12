@@ -35,7 +35,7 @@ $ make WHISPER_ENDPOINT_NAME=<endpoint_name> WORKSPACE_NAME=<tf_workspace_name>
 
 To destroy your Workspace and tear down the resources:
 ```bash
-make destroy-terraform-workspace WHISPER_ENDPOINT_NAME=<endpoint_name> WORKSPACE_NAME=<tf_workspace_name>
+$ make destroy-terraform-workspace WHISPER_ENDPOINT_NAME=<endpoint_name> WORKSPACE_NAME=<tf_workspace_name>
 ```
 
 
