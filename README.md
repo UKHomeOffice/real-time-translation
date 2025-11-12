@@ -8,7 +8,8 @@ Real-Time Translation leverages Transcription Translation AI models to transcrib
 
 # Architecture Overview
 
-* SageMaker to host the OpenAI Whisper model
+* SageMaker Endpoints to host the OpenAI Whisper model
+* SageMaker Notebooks to train and deploy models
 * AWS DynamoDB, S3 for storage
 * AWS Step Functions, AWS Lambda for Orchestration
 * AWS API Gaetway for APIs
