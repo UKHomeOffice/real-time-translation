@@ -8,7 +8,7 @@ Real-Time Translation leverages Transcription Translation AI models to transcrib
 
 * SageMaker to host OpenAI Whisper model
 * AWS DynamoDB, S3 for storage
-* AWS Step Functions for Orchestration
+* AWS Step Functions, AWS Lambda for Orchestration
 * Amazon Cognito for authentication
 * Nunjuck, Javascript and the [UK Gov FrontEnd framework|https://frontend.design-system.service.gov.uk/] for FrontEnd
 
