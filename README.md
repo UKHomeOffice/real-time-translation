@@ -26,8 +26,9 @@ Afrikaans, Arabic, Armenian, Azerbaijani, Belarusian, Bosnian, Bulgarian, Catala
 # Developing the Real-Time Translation API
 
 To work on developing the core Real-Time Translation API, run the below command which will deploy the service to an isolated Terraform Workspace:
-
-```make WHISPER_ENDPOINT_NAME=<endpoint_name> WORKSPACE_NAME=<tf_workspace_name>```
+```bash
+$ make WHISPER_ENDPOINT_NAME=<endpoint_name> WORKSPACE_NAME=<tf_workspace_name>
+```
 
 
 
