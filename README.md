@@ -2,7 +2,7 @@
 
 # Real-Time Translation
 
-Real-Time Translation leverages Transcription Translation AI models to transcribe and translate audio from a mobile device or laptop and via a Web Frontend.
+Real-Time Translation leverages Transcription Translation AI models to transcribe and translate audio from a mobile device or laptop via a Web Frontend.
 
 # Language Support
 
