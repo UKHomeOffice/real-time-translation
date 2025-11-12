@@ -2,7 +2,7 @@
 
 # Real-Time Translation
 
-Real-Time Translation leverages Transcription Translation AI models to transcribe and translate audio from a mobile device or laptop via a Web Frontend.
+Real-Time Translation leverages Transcription Translation AI models to transcribe and translate audio, exposed via API and a UK Gov Web Frontend.
 
 # Architecture Overview
 
@@ -20,5 +20,13 @@ Afrikaans, Arabic, Armenian, Azerbaijani, Belarusian, Bosnian, Bulgarian, Catala
 # Transcription Translation Models Used
 
 * https://github.com/openai/whisper
+
+# Developing the Real-Time Translation API
+
+To work on developing the core Real-Time Translation API, run the below command which will deploy the service to an isolated Terraform Workspace:
+```make WHISPER_ENDPOINT_NAME=<endpoint_name> WORKSPACE_NAME=<tf_workspace_name>```
+
+
+
 
 
