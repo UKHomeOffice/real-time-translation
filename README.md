@@ -30,6 +30,13 @@ To work on developing the core Real-Time Translation API, run the below command 
 $ make WHISPER_ENDPOINT_NAME=<endpoint_name> WORKSPACE_NAME=<tf_workspace_name>
 ```
 
+To destroy your Workspace and tear down the resources:
+```bash
+make destroy-terraform-workspace WHISPER_ENDPOINT_NAME=<endpoint_name> WORKSPACE_NAME=<tf_workspace_name>
+```
+
+
+
 
 
 
