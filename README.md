@@ -1,5 +1,4 @@
 [![kics](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/kics.yml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/kics.yml)
-
 [![trivy](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/trivy.yml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/trivy.yml)
 
 # Real-Time Translation
