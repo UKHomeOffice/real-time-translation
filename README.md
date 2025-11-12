@@ -4,6 +4,14 @@
 
 Real-Time Translation leverages Transcription Translation AI models to transcribe and translate audio from a mobile device or laptop via a Web Frontend.
 
+# Architecture Overview
+
+* SageMaker to host OpenAI Whisper model
+* AWS DynamoDB, S3 for storage
+* AWS Step Functions for Orchestration
+* Amazon Cognito for authentication
+* Nunjuck, Javascript and the [UK Gov FrontEnd framework|https://frontend.design-system.service.gov.uk/] for FrontEnd
+
 # Language Support
 
 **<50% word error rate (WER)**
