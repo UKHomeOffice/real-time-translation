@@ -1,4 +1,4 @@
-[![actions](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/actions.yml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/actions.yml)
+[![kics](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/kics.yml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/kics.yml)
 
 # Real-Time Translation
 
