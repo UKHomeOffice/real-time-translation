@@ -14,7 +14,7 @@ Real-Time Translation leverages Transcription Translation AI models to transcrib
 * AWS Step Functions, AWS Lambda for Orchestration
 * AWS API Gaetway for APIs
 * Amazon Cognito for authentication
-* Nunjuck, Javascript and the [UK Gov FrontEnd framework](https://frontend.design-system.service.gov.uk/) for FrontEnd
+* Nunjucks, Javascript and the [UK Gov FrontEnd framework](https://frontend.design-system.service.gov.uk/) for FrontEnd
 
 # Language Support
 
