@@ -37,3 +37,6 @@ Afrikaans, Arabic, Armenian, Azerbaijani, Belarusian, Bosnian, Bulgarian, Catala
 ## Commands
 1. `pip install -r inference_example_requirements.txt`
 2. `python3 src/inference_example.py`
+
+# Contact Us
+If you'd like to know more, please contact us at RealTimeTranslation@homeoffice.gov.uk.
