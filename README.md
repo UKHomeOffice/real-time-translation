@@ -6,7 +6,7 @@
 # Real-Time Translation
 
 Real-Time Translation leverages Transcription Translation AI models to transcribe and translate audio, exposed via API and a UK Gov Web Frontend.
-This repository is *NOT* production ready code. It shows a small example of the kind of technology and design pattern that is used in the Real-Time Translation project
+This repository is *NOT* production ready code. It shows a small example of the kind of technology and design pattern that is used in the Real-Time Translation project.
 
 # Architecture Overview
 
