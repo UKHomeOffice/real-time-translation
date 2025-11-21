@@ -1,6 +1,12 @@
 name: KICS Scan
 
 on:
+  push:
+    paths:
+      - '*'
+  pull_request:
+    paths:
+      - '*'
 
 jobs:
   kics-scan:
@@ -16,7 +22,5 @@ jobs:
       - name: Run KICS with Configuration
         uses: checkmarx/kics-github-action@v2.1.15
         with:
-          scan-path: .
-          config-path: ./kics-config.yaml
-          output-name: kics-results.json
-          output-format: json
+          path: "."
+          config_path: ./kics-config.yaml
