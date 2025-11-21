@@ -11,7 +11,6 @@ Test coverage includes:
 - Handling of file deletion errors (FileNotFoundError) during cleanup.
 
 Each test is designed to validate the correct behavior of the inference functions under different conditions and input parameters.
-from unittest.mock import patch, MagicMock
 """
 from unittest.mock import patch, MagicMock
 
@@ -92,9 +91,9 @@ def test_predict_fn_transcribe_defaults(mock_boto3_client, mock_soundfile_read, 
     assert result == "transcribed text"
 
 
-@patch("inference.os.remove")
-@patch("inference.soundfile.read")
-@patch("inference.boto3.client")
+@patch("src.inference.os.remove")
+@patch("src.inference.soundfile.read")
+@patch("src.inference.boto3.client")
 def test_predict_fn_translate_with_options(mock_boto3_client, mock_soundfile_read, mock_os_remove):
     """
     Test that `predict_fn` performs translation with specified options and cleans up the file.
@@ -128,9 +127,9 @@ def test_predict_fn_translate_with_options(mock_boto3_client, mock_soundfile_rea
     assert result == "translated text"
 
 
-@patch("inference.os.remove", side_effect=FileNotFoundError)
-@patch("inference.soundfile.read")
-@patch("inference.boto3.client")
+@patch("src.inference.os.remove", side_effect=FileNotFoundError)
+@patch("src.inference.soundfile.read")
+@patch("src.inference.boto3.client")
 def test_predict_fn_file_not_found_cleanup(mock_boto3_client, mock_soundfile_read, mock_os_remove):
     """
     Test that `predict_fn` handles FileNotFoundError when deleting the file.

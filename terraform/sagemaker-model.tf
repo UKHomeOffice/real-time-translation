@@ -25,13 +25,12 @@ locals {
         model_etag      = data.archive_file.sagemaker_whisper_model.output_md5
         manual_rotation = 0  # This could be manually increased to resolve any issues with same-names
     }
-    model_suffix = substr(sha256(jsonencode(local.model_definition)), 0, 10)
 }
 
 data "archive_file" "sagemaker_whisper_model" {
   type        = "tar.gz"
   source {
-    content  = file("../src/whisper/inference.py")
+    content  = file("../src/inference.py")
     filename = "code/inference.py"  # Must be in code folder for inference script to be used
   }
   output_path = "../dist/whisper_inference.tar.gz"
@@ -39,7 +38,7 @@ data "archive_file" "sagemaker_whisper_model" {
 
 resource "aws_s3_bucket" "model" {
   bucket        = "${var.project}-model"
-  force_destroy = false
+  force_destroy = true
 }
 
 resource "aws_s3_object" "whisper_model" {
@@ -67,17 +66,26 @@ resource "aws_iam_role" "sagemaker_execution" {
   assume_role_policy = data.aws_iam_policy_document.assume_role_sagemaker.json
 }
 
-data "aws_iam_policy" "sagemaker_execution_full_access" {
+data "aws_iam_policy" "sagemaker_execution_sagemaker_full_access" {
   arn = "arn:aws:iam::aws:policy/AmazonSageMakerFullAccess"
 }
 
-resource "aws_iam_role_policy_attachment" "sagemaker_execution_full_access" {
+data "aws_iam_policy" "sagemaker_execution_s3_full_access" {
+  arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+}
+
+resource "aws_iam_role_policy_attachment" "sagemaker_execution_sagemaker_full_access" {
   role       = aws_iam_role.sagemaker_execution.name
-  policy_arn = data.aws_iam_policy.sagemaker_execution_full_access.arn
+  policy_arn = data.aws_iam_policy.sagemaker_execution_sagemaker_full_access.arn
+}
+
+resource "aws_iam_role_policy_attachment" "sagemaker_execution_s3_full_access" {
+  role       = aws_iam_role.sagemaker_execution.name
+  policy_arn = data.aws_iam_policy.sagemaker_execution_s3_full_access.arn
 }
 
 resource "aws_sagemaker_model" "whisper" {
-  name               = "${var.project}-whisper-${local.model_suffix}"
+  name               = "${var.project}-whisper"
   execution_role_arn = aws_iam_role.sagemaker_execution.arn
 
   primary_container {
@@ -89,7 +97,7 @@ resource "aws_sagemaker_model" "whisper" {
 }
 
 resource "aws_sagemaker_endpoint_configuration" "whisper" {
-  name = "${var.project}-whisper-${local.model_suffix}"
+  name = "${var.project}-whisper"
 
   production_variants {
     variant_name           = local.model_definition.production_variants.variant_name

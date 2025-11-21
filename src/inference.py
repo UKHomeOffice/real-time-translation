@@ -44,19 +44,19 @@ def model_fn(model_dir):
         configured to use the 'openai/whisper-small' model, with device and torch dtype
         automatically selected based on CUDA availability.
     """
-    model_name="openai/whisper-small"
+    model_name = "openai/whisper-small"
 
     # Set device settings
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
     torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
     # Create pipeline
     pipe = pipeline(
-    "automatic-speech-recognition",
-    model=model_name,
-    torch_dtype=torch_dtype,
-    chunk_length_s=30,
-    device=device,
-        )
+        "automatic-speech-recognition",
+        model=model_name,
+        torch_dtype=torch_dtype,
+        chunk_length_s=30,
+        device=device,
+    )
     return pipe
 
 
