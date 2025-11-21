@@ -1,4 +1,4 @@
-name: KICS Scan
+name: kics
 
 on:
   push:
