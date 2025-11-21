@@ -1,31 +1,22 @@
-# This is a basic workflow to help you get started with Actions
+name: KICS Scan
 
-name: kics
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  RunTerraformValidation:
-    name: Run Terraform SAST
+  kics-scan:
+    name: Run KICS Scan
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clone the Repository
-        uses: actions/checkout@v4
+      # Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-      - name: run kics Scan
+      # Run KICS Scan
+      - name: Run KICS with Configuration
         uses: checkmarx/kics-github-action@v2.1.15
         with:
-          path: '.'
-          fail_on: high,medium
-          output_path: myResults/
+          scan-path: .
+          config-path: ./kics-config.yaml
+          output-name: kics-results.json
+          output-format: json
