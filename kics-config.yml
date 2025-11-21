@@ -3,6 +3,7 @@
 # exclude-queries: "exclude queries by providing the query ID"
 # exclude-results: "exclude results by providing a list of similarity IDs of a result"
 # exclude-severities: "low,info"
+include-queries: "e7a9b9d1-1b7d-4b8b-8b5b-2a1c5b5b5b5b"
 fail-on: "high,medium"
 # libraries-path: "path to directory with libraries (default "./assets/libraries")"
 # log-file: true
