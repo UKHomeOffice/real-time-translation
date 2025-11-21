@@ -1,20 +1,16 @@
-[![kics](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/kics.yml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/kics.yml)
-[![trivy](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/trivy.yml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/trivy.yml)
 [![terraform](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/terraform.yaml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/terraform.yaml)
+[![linting](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pylint.yaml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pylint.yaml)
+[![unit tests](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pytest_unit.yaml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pytest_unit.yaml)
+[![integration tests](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pytest_integration/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/terrafpytest_integrationorm.yaml)
 
 # Real-Time Translation
 
 Real-Time Translation leverages Transcription Translation AI models to transcribe and translate audio, exposed via API and a UK Gov Web Frontend.
+This repository is *NOT* production ready code. It shows a small example of the kind of technology and design pattern that is used in the Real-Time Translation project
 
 # Architecture Overview
 
 * SageMaker Endpoints to host the OpenAI Whisper model
-* SageMaker Notebooks to train and deploy models
-* AWS DynamoDB, S3 for storage
-* AWS Step Functions, AWS Lambda for Orchestration
-* AWS API Gaetway for APIs
-* Amazon Cognito for authentication
-* Nunjucks, Javascript and the [UK Gov FrontEnd framework](https://frontend.design-system.service.gov.uk/) for FrontEnd
 
 # Language Support
 
@@ -25,23 +21,19 @@ Afrikaans, Arabic, Armenian, Azerbaijani, Belarusian, Bosnian, Bulgarian, Catala
 
 * https://github.com/openai/whisper
 
-# Run Commands 
+# Testing output
 
-# Developing the Real-Time Translation API
+## Setup commands
+1. `terraform init`
+2. `terraform validate`
+3. `terraform plan -var="account_number=<ACCOUNT_NUMBER>"`
+4. `terraform apply -var="account_number=<ACCOUNT_NUMBER>"`
 
-To work on developing the core Real-Time Translation API, run the below command which will deploy the service as an isolated Terraform Workspace:
-```bash
-$ make WHISPER_ENDPOINT_NAME=<endpoint_name> WORKSPACE_NAME=<tf_workspace_name>
-```
-
-To destroy your Workspace and tear down the resources:
-```bash
-$ make destroy-terraform-workspace WHISPER_ENDPOINT_NAME=<endpoint_name> WORKSPACE_NAME=<tf_workspace_name>
-```
-
-
-
-
-
-
-
+## Example inference
+### Prerequisities
+1. An example wav file with sampling rate 16kHz, 16 bit depth, mono audio has been uploaded to your S3 bucket of choice
+2. AWS CLI has been setup
+3. Placeholders have been overwritten in `src/inference_example.py`
+## Commands
+1. `pip install -r inference_example_requirements.txt`
+2. `python3 src/inference_example.py`

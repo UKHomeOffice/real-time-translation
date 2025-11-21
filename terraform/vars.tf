@@ -4,12 +4,6 @@ variable "region" {
   default     = "eu-west-2"
 }
 
-variable "project" {
-  type        = string
-  description = "Name of project"
-  default     = "real-time-translation"
-}
-
 variable "account_number" {
   type        = string
   description = "AWS Account Number"

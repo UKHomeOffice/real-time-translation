@@ -37,7 +37,7 @@ data "archive_file" "sagemaker_whisper_model" {
 }
 
 resource "aws_s3_bucket" "model" {
-  bucket        = "${var.project}-model"
+  bucket        = "real-time-translation-model"
   force_destroy = true
 }
 
@@ -62,7 +62,7 @@ data "aws_iam_policy_document" "assume_role_sagemaker" {
 }
 
 resource "aws_iam_role" "sagemaker_execution" {
-  name               = "${var.project}-sagemaker_execution"
+  name               = "real-time-translation-sagemaker_execution"
   assume_role_policy = data.aws_iam_policy_document.assume_role_sagemaker.json
 }
 
@@ -85,7 +85,7 @@ resource "aws_iam_role_policy_attachment" "sagemaker_execution_s3_full_access" {
 }
 
 resource "aws_sagemaker_model" "whisper" {
-  name               = "${var.project}-whisper"
+  name               = "real-time-translation-whisper"
   execution_role_arn = aws_iam_role.sagemaker_execution.arn
 
   primary_container {
@@ -97,7 +97,7 @@ resource "aws_sagemaker_model" "whisper" {
 }
 
 resource "aws_sagemaker_endpoint_configuration" "whisper" {
-  name = "${var.project}-whisper"
+  name = "real-time-translation-whisper"
 
   production_variants {
     variant_name           = local.model_definition.production_variants.variant_name
@@ -109,6 +109,6 @@ resource "aws_sagemaker_endpoint_configuration" "whisper" {
 }
 
 resource "aws_sagemaker_endpoint" "whisper" {
-  name                 = "${var.project}-whisper"
+  name                 = "real-time-translation-whisper"
   endpoint_config_name = aws_sagemaker_endpoint_configuration.whisper.name
 }
