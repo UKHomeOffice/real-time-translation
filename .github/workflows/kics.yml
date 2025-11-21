@@ -23,4 +23,4 @@ jobs:
         uses: checkmarx/kics-github-action@v2.1.15
         with:
           path: "."
-          config_path: ./kics-config.yaml
+          config_path: ./kics-config.yml
