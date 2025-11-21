@@ -1,9 +1,3 @@
-metadata:
-  name: "Secrets Scan"
-  description: "Scan repository for secrets only"
-  author: "Your Name"
-  organization: "Your Organization"
-
 scan:
   queries:
     include:
@@ -14,6 +8,3 @@ scan:
     - "node_modules"
     - "dist"
     - ".git"
-  output:
-    format: "json"
-    path: "./kics-results.json"
