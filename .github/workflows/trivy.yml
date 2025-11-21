@@ -8,10 +8,10 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - '*'
+      - '**/*'
   pull_request:
     paths:
-      - '*'
+      - '**/*'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
