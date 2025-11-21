@@ -2,6 +2,7 @@
 [![linting](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pylint.yaml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pylint.yaml)
 [![unit tests](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pytest_unit.yaml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pytest_unit.yaml)
 [![integration tests](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pytest_integration.yaml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pytest_integration.yaml)
+[![trivy](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/trivy.yml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/trivy.yml)
 
 # Real-Time Translation
 
