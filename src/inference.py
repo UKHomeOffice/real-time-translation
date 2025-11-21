@@ -112,7 +112,7 @@ def predict_fn(data, pipe):
     transcription = pipe(audio_data,
                          return_timestamps=data['return_timestamps'],
                          return_language=data['return_language'],
-                         generate_kwargs = {"language":data['language'],
+                         generate_kwargs = {"language": data['language'],
                                             "task": data['task']}
                         )['text']
     print('TRANSCRIPTION/TRANSLATION COMPLETE!')
