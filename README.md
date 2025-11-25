@@ -1,7 +1,7 @@
 [![terraform](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/terraform.yaml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/terraform.yaml)
-[![linting](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pylint.yaml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pylint.yml)
-[![unit tests](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pytest_unit.yaml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pytest_unit.yml)
-[[![integration tests](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pytest_integration.yaml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pytest_integration.yml)
+[![linting](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pylint.yml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pylint.yml)
+[![unit tests](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pytest_unit.yml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pytest_unit.yml)
+[![integration tests](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pytest_integration.yml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/pytest_integration.yml)
 [![trivy](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/trivy.yml/badge.svg)](https://github.com/UKHomeOffice/real-time-translation/actions/workflows/trivy.yml)
 
 # Real-Time Translation
