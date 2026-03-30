@@ -24,7 +24,7 @@ jobs:
 
       # Results have to be a table as the organisation does not have Advanced Security license.
       - name: Trivy Scan - fs, secrets
-        uses: aquasecurity/trivy-action@0.19.0
+        uses: aquasecurity/trivy-action@0.35.0
         with:
           scan-type: 'fs'
           scanners: 'secret'
